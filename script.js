@@ -1,5 +1,5 @@
 let cpuWin = `You Lose this round`;
-let playerWin =  `You Win this round`; 
+let playerWin = `You Win this round`; 
 let draw = `It's a Tie!, try again`;
 
 let playerWins = "You Win, Congratulations!";
@@ -25,9 +25,9 @@ function round(playerSelection, cpuSelection)
       return cpuWin;
     }
 
-  else if (playerSelection=== "rock" && cpuSelection === "scissors" || 
-           playerSelection=== "paper" && cpuSelection === "rock" || 
-           playerSelection=== "scissors" && cpuSelection === "paper")
+  else if (playerSelection === "rock" && cpuSelection === "scissors" || 
+           playerSelection === "paper" && cpuSelection === "rock" || 
+           playerSelection === "scissors" && cpuSelection === "paper")
     {
       return playerWin; 
     }
@@ -37,25 +37,6 @@ function round(playerSelection, cpuSelection)
       return draw;
     }
 }
-
-
-  for (let i = 0; i< 1000; i++) {
- 
-    let playerSelection = prompt("Make your choice:").toLowerCase();
-    let cpuSelection = cpu();
-    let result = round(playerSelection, cpuSelection);
-
-    console.log(result);
-    getScore(result);
-
-    if (playerScore === 5 || cpuScore === 5) {
-      break;
-    }
-}
-
-
-
-
 
 function getScore(result)
 {
@@ -86,4 +67,18 @@ function getScore(result)
       console.log(cpuWins);
       return;
     }
+}
+
+for (let i = 0; i < 1000; i++) {
+ 
+  let playerSelection = prompt("Make your choice:").toLowerCase();
+  let cpuSelection = cpu();
+  let result = round(playerSelection, cpuSelection);
+
+  console.log(result);
+  getScore(result);
+
+  if (playerScore === 5 || cpuScore === 5) {
+    break;
+  }
 }
